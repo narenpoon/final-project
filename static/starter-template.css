@@ -1,0 +1,10 @@
+.navbar navbar-inverse navbar-fixed-top{
+    height : 30px
+}
+body {
+    padding-top: 50px;
+  }
+  .starter-template {
+    padding: 40px 15px;
+    text-align: center;
+  }

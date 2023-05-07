@@ -1,0 +1,54 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}
+NEWS CATEGORY
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<!--suppress ALL -->
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<div class ='container'>
+    <h3><b> The Uploaded News: </b></h3> <h4>{{d}}</h4>
+    {% if cm0 == 0 and cm1 == 0 and cm2 == 0 and cm3 == 0 and cm4 == 0: %}
+            <center><h3><b>
+                Category :</b>
+            </h3>
+            <h2 style="font-size: 24px">
+                {{context}}
+            </h2></center>
+
+            </h2></center>
+        {% else %}
+
+
+    <center><h3><b>
+        Predicted Category:</b>
+        </h3>
+        <h2>
+            {{context}}
+        </h2></center>
+        <center><h3><b>
+            Accuracy:</b>
+        </h3>
+            <h2 style="font-size: 24px">
+                {{cm0 | round}}% <b>Business</b><br>
+                {{cm1 | round}}% <b>Entertainment</b><br>
+                {{cm2 | round}}% <b>Politics</b><br>
+                {{cm3 | round}}% <b>Sports</b><br>
+                {{cm4 | round}}% <b>Technology</b><br>
+
+            </h2></center>
+        {% endif %}
+        <center><a href ="/dashboard">
+        <button class="btn btn-lg btn-primary" type="submit" value="Yes" name ="button">Dashboard</button>
+    </a>
+    </center>
+</div>
+
+{% endblock %}
